@@ -1,0 +1,12 @@
+/Users/dashund/repos/Sharp/BPSim/bin/Debug/netcoreapp3.1/BPSim.deps.json
+/Users/dashund/repos/Sharp/BPSim/bin/Debug/netcoreapp3.1/BPSim.runtimeconfig.json
+/Users/dashund/repos/Sharp/BPSim/bin/Debug/netcoreapp3.1/BPSim.runtimeconfig.dev.json
+/Users/dashund/repos/Sharp/BPSim/bin/Debug/netcoreapp3.1/BPSim.dll
+/Users/dashund/repos/Sharp/BPSim/bin/Debug/netcoreapp3.1/BPSim.pdb
+/Users/dashund/repos/Sharp/BPSim/obj/Debug/netcoreapp3.1/BPSim.csprojAssemblyReference.cache
+/Users/dashund/repos/Sharp/BPSim/obj/Debug/netcoreapp3.1/BPSim.AssemblyInfoInputs.cache
+/Users/dashund/repos/Sharp/BPSim/obj/Debug/netcoreapp3.1/BPSim.AssemblyInfo.cs
+/Users/dashund/repos/Sharp/BPSim/obj/Debug/netcoreapp3.1/BPSim.csproj.CoreCompileInputs.cache
+/Users/dashund/repos/Sharp/BPSim/obj/Debug/netcoreapp3.1/BPSim.dll
+/Users/dashund/repos/Sharp/BPSim/obj/Debug/netcoreapp3.1/BPSim.pdb
+/Users/dashund/repos/Sharp/BPSim/obj/Debug/netcoreapp3.1/BPSim.genruntimeconfig.cache
