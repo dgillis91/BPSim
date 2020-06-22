@@ -27,7 +27,7 @@ namespace CustomCollections {
             Count = initialData.Count;
             int maxChildIndex = (int) System.Math.Floor((double) Count / 2);
             for (int i = maxChildIndex; i >= 0; --i) {
-                heapify(i);
+                Heapify(i);
             }
         }
 
@@ -41,13 +41,13 @@ namespace CustomCollections {
             return builder.ToString();
         }
 
-        public T extract() {
+        public T Extract() {
             if (Count <= 0) {
                 throw new EmptyCollectionException("Attempt to extract() from an empty heap");
             }
             T extrema = data[0];
             data[0] = data[--Count];
-            heapify(0);
+            Heapify(0);
             return extrema;
         }
     }

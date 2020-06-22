@@ -2,10 +2,10 @@ using System;
 
 namespace CustomCollections {
     public partial class Heap<T> : System.Collections.Generic.ICollection<T> where T : IComparable {
-        private void heapify(int i) {
+        private void Heapify(int i) {
             int l, r, largest;
-            l = leftChildIndex(i);
-            r = rightChildIndex(i);
+            l = LeftChildIndex(i);
+            r = RightChildIndex(i);
 
             if (l < Count && data[l].CompareTo(data[i]) > 0) {
                 largest = l;
@@ -16,24 +16,24 @@ namespace CustomCollections {
                 largest = r;
             }
             if (largest != i) {
-                swapElementsAt(i, largest);
-                heapify(largest);
+                SwapElementsAt(i, largest);
+                Heapify(largest);
             }
         }
 
-        private static int parentIndex(int index) {
+        private static int ParentIndex(int index) {
             return (int)System.Math.Floor((double)index / 2);
         }
 
-        private static int leftChildIndex(int index) {
+        private static int LeftChildIndex(int index) {
             return 2 * index + 1;
         }
 
-        private static int rightChildIndex(int index) {
+        private static int RightChildIndex(int index) {
             return 2 * index + 2;
         }
 
-        private void swapElementsAt(int i, int j) {
+        private void SwapElementsAt(int i, int j) {
             T temp = data[i];
             data[i] = data[j];
             data[j] = temp;
