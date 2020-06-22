@@ -16,8 +16,8 @@ namespace CustomCollections {
         public Heap() : this(DEFAULT_LENGTH) { }
 
         public Heap(int initialLength) {
-            Count = 0;
             currentLength = initialLength;
+            Count = 0;
             data = new T[currentLength];
         }
 
@@ -39,6 +39,16 @@ namespace CustomCollections {
                 builder.AppendFormat("{0} ", data[i].ToString());
             }
             return builder.ToString();
+        }
+
+        public T extract() {
+            if (Count <= 0) {
+                throw new EmptyCollectionException("Attempt to extract() from an empty heap");
+            }
+            T extrema = data[0];
+            data[0] = data[--Count];
+            heapify(0);
+            return extrema;
         }
     }
 }
