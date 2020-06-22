@@ -1,5 +1,7 @@
+using System;
+
 namespace CustomCollections {
-    public class EmptyCollectionException : IndexOutOfRangeException {
+    public class EmptyCollectionException : Exception {
         public EmptyCollectionException() { }
         public EmptyCollectionException(string message) : base(message) { }
         public EmptyCollectionException(string message, System.Exception inner) : base(message, inner) { }
