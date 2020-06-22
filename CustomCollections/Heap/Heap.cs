@@ -1,53 +1,44 @@
+using System.Collections.Generic;
 using System.Collections;
+using System.Text;
+using System;
 
-namespace CustomCollections.Heap {
-    public class Heap<T> where T : IComparer, IEqualityComparer {
-        private static const int DEFAULT_LENGTH = 100;
+namespace CustomCollections {
+    public partial class Heap<T> : System.Collections.Generic.ICollection<T> where T : IComparable {
+        private static int DEFAULT_LENGTH = 100;
         
         private int currentLength;
         private T[] data;
 
         public int Count { get; private set; }
+        public bool IsReadOnly { get; private set; } = false;
 
-        public Heap() { 
-            Heap(Heap.DEFAULT_LENGTH);
-        }
+        public Heap() : this(DEFAULT_LENGTH) { }
 
         public Heap(int initialLength) {
             Count = 0;
             currentLength = initialLength;
-            data = new int[currentLength];
+            data = new T[currentLength];
         }
 
-        public Heap(ICollection<T> initialData, int initialLength) {
-            if (initialLength >= initialData.Count) {
-                Heap(initialLength);
-            } else {
-                Heap(initialData.Count);
-            }
+        public Heap(ICollection<T> initialData, int initialLength) :
+        this(initialLength >= initialData.Count ? initialLength : initialData.Count) {
             initialData.CopyTo(this.data, 0);
             Count = initialData.Count;
-            //maxHeapify(); BUILD MAX HEAP
+            int maxChildIndex = (int) System.Math.Floor((double) Count / 2);
+            for (int i = maxChildIndex; i >= 0; --i) {
+                heapify(i);
+            }
         }
 
-        public Heap(ICollection<T> initialData) {
-            Heap(initialData, Heap.DEFAULT_LENGTH);
-        }
+        public Heap(ICollection<T> initialData) : this(initialData, DEFAULT_LENGTH) { }
 
-        private void maxHeapify(int i) {
-            
-        }
-
-        private static int parentIndex(int index) {
-            return Math.floor(index / 2);
-        }
-
-        private static int leftChildIndex(int index) {
-            return 2 * index;
-        }
-
-        private static int rightChildIndex(int index) {
-            return 2 * index + 1;
+        public override string ToString() {
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < Count; ++i) {
+                builder.AppendFormat("{0} ", data[i].ToString());
+            }
+            return builder.ToString();
         }
     }
 }
