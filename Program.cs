@@ -16,6 +16,13 @@ namespace BPSim {
 
             Console.WriteLine("Second Extract: {0}", heap.Extract());
             Console.WriteLine(heap);
+
+            Console.WriteLine("Adding Elements:");
+            heap.Add(20);
+            heap.Add(-3);
+            Console.WriteLine(heap);
+
+            Console.WriteLine("Final Length: {0}", heap.Count);
         }
 
         private static int[] makeLinearIntegerArray(int length) {
