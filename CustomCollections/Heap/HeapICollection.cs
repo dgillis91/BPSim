@@ -5,7 +5,12 @@ using System;
 namespace CustomCollections {
     public partial class Heap<T> : System.Collections.Generic.ICollection<T> where T : IComparable {
         public void Add(T element) {
-            throw new NotImplementedException();
+            int i = Count++;
+            data[i] = element;
+            while (i > 0 && data[ParentIndex(i)].CompareTo(data[i]) < 0) {
+                SwapElementsAt(i, ParentIndex(i));
+                i = ParentIndex(i);
+            }
         }
 
         public void Clear() {
